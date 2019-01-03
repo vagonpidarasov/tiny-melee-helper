@@ -1,0 +1,14 @@
+## Interface: 30300
+## Title: Tiny Melee Helper
+## Version: 4.0.1
+## Author: vagonpidarasov
+## Notes: Arms warrior PVP rotation helper
+TinyMeleeHelper.lua
+spells.lua
+items.lua
+mortal-strike.lua
+cast-from-stance.lua
+cast-queue.lua
+TinyMeleeHelper.xml
+binding-names.lua
+bindings.lua

@@ -1,0 +1,50 @@
+<Bindings>
+	<Binding name="TMHMORTAL" header="TINYMELEEHELPER">
+		TMHMortalStrike()
+	</Binding>
+	
+	<Binding name="TMHSHILEDSLAMBASH">
+		TMHShieldSlamBash()
+	</Binding>
+	
+	<Binding name="TMHCHARGE">
+		TMHCharge()
+	</Binding>
+	
+	<Binding name="TMHCEPT">
+		TMHIntercept()
+	</Binding>
+
+	<Binding name="TMHSHIELDWALL">
+		TMHShieldWall()
+	</Binding>
+
+	<Binding name="TMHSHIELDBLOCK">
+		TMHShieldBlock()
+	</Binding>
+
+	<Binding name="TMHDISARM">
+		TMHDisarm()
+	</Binding>
+	
+	<Binding name="TMHINTERVENE">
+		TMHIntervene()
+	</Binding>
+
+	<Binding name="TMHENRAGEDREGENERATION">
+		TMHEnragedRegeneration()
+	</Binding>
+
+	<Binding name="TMHTMHRECKLESSNESS">
+		TMHRecklessness()
+	</Binding>
+	
+	<Binding name="TMHRETALIATION">
+		TMHRetaliation()
+	</Binding>
+	
+	<Binding name="TMHREND">
+		TMHCastRend()
+	</Binding>
+	
+</Bindings>
