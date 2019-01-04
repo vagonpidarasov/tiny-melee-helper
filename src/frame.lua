@@ -1,14 +1,14 @@
-function THMFrameOnLoad(frame, event)
-    TinyMeleeHelper:resolveSpells();
-    TinyMeleeHelper:resolveItems();
-end
-
 function TMHFrameOnUpdate(frame, event)
     TinyMeleeHelper:castHeroicStrike();
     TinyMeleeHelper:castAsyncSpell();
 end
 
 function TMHFrameOnEvent(frame, event, ...)
+    if (TinyMeleeHelper:isPlayerEnteringWorldEvent(event, ...)) then
+        TinyMeleeHelper:resolveSpells();
+        TinyMeleeHelper:resolveItems();
+    end
+
     if TinyMeleeHelper:isSwingEvent(event, ...) then
         TinyMeleeHelper:resolveHeroicStrikeCastTime();
     end
@@ -17,3 +17,9 @@ function TMHFrameOnEvent(frame, event, ...)
         TinyMeleeHelper:resolveHeroicStrikeCastTime();
     end
 end
+
+local TMHFrame = CreateFrame('Frame', nil, UIParent);
+TMHFrame:RegisterEvent('PLAYER_ENTERING_WORLD');
+TMHFrame:RegisterEvent('COMBAT_LOG_EVENT_UNFILTERED');
+TMHFrame:SetScript('OnEvent', TMHFrameOnEvent)
+TMHFrame:SetScript('OnUpdate', TMHFrameOnUpdate)
