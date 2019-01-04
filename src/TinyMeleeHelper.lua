@@ -1,6 +1,9 @@
 TinyMeleeHelper = {
-    isLuaLocked = true, -- TODO detect automatically
-    asyncCastTimeout = 0.5,
+    config = {
+        isLuaLocked = true, -- TODO detect automatically
+        asyncCastTimeout = 0.5,
+        heroicStrikeCastTimeout = 0.5,
+    },
 };
 
 function TinyMeleeHelper:resolveSpells()
@@ -18,7 +21,7 @@ function TinyMeleeHelper:resolveItems()
 end
 
 function TinyMeleeHelper:runMacroText(macroText)
-    if self.isLuaLocked then
+    if self.config.isLuaLocked then
         print(macroText);
     else
         RunMacroText(macroText);

@@ -1,8 +1,7 @@
 TinyMeleeHelper.spells = {
     HeroicStrike = {
         id = 47450,
-        rage = 65, -- rage ammount required
-        delay = 1, -- how often should it be trigerred
+        rage = 65,
         target = true,
     },
 

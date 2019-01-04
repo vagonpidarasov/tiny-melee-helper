@@ -9,20 +9,11 @@ function TMHFrameOnUpdate(frame, event)
 end
 
 function TMHFrameOnEvent(frame, event, ...)
-    local eventType = select(2, ...);
-    local sourceGUID = select(4, ...);
-    local playerGUID = UnitGUID('player');
-    local attackSpeed = UnitAttackSpeed('player');
-
-    if (
-        event == 'COMBAT_LOG_EVENT_UNFILTERED' and
-        eventType == 'SWING_DAMAGE' and
-        sourceGUID == playerGUID
-    ) then
-        print('next swing in', attackSpeed);
+    if TinyMeleeHelper:isSwingEvent(event, ...) then
+        TinyMeleeHelper:resolveHeroicStrikeCastTime();
     end
 
-    if (event == 'UNIT_INVENTORY_CHANGED') then
-        print('UNIT_INVENTORY_CHANGED');
+    if (TinyMeleeHelper:isUnitInventoryChangeEvent(event, ...)) then
+        TinyMeleeHelper:resolveHeroicStrikeCastTime();
     end
 end

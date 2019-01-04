@@ -3,7 +3,9 @@
 ## Version: 4.0.1
 ## Author: vagonpidarasov
 ## Notes: Arms warrior PVP rotation helper
+TinyMeleeHelper.xml
 TinyMeleeHelper.lua
+event-detection.lua
 spells.lua
 items.lua
 mortal-strike.lua
@@ -12,4 +14,4 @@ cast-from-stance.lua
 async-cast.lua
 binding-names.lua
 bindings.lua
-TinyMeleeHelper.xml
+frame.lua

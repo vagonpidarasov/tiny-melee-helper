@@ -17,7 +17,7 @@ function TinyMeleeHelper:resetSpellAsync()
 end
 
 function TinyMeleeHelper:isAsyncSpellInvalid()
-    if (self.asyncCast.time + self.asyncCastTimeout < GetTime()) then
+    if (self.asyncCast.time + self.config.asyncCastTimeout < GetTime()) then
         return true;
     end
 
