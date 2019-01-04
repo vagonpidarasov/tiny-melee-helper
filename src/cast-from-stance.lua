@@ -8,10 +8,10 @@ TinyMeleeHelper.stanceNumberMap = {
 function TinyMeleeHelper:castSpellFromStance(spell)
     self:cancelWhirlwind();
 
-    if (GetShapeshiftForm() == spell.stance) then
+    if (self:isStanceActive(spell.stance)) then
         self:castSpell(spell);
     else
         self:castSpell(self.stanceNumberMap[spell.stance]);
-        self:setSpellQueue(spell);
+        self:castSpellAsync(spell);
     end
 end

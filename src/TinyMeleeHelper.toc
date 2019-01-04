@@ -7,8 +7,9 @@ TinyMeleeHelper.lua
 spells.lua
 items.lua
 mortal-strike.lua
+heroic-strike.lua
 cast-from-stance.lua
-cast-queue.lua
-TinyMeleeHelper.xml
+async-cast.lua
 binding-names.lua
 bindings.lua
+TinyMeleeHelper.xml

@@ -1,4 +1,7 @@
-TinyMeleeHelper = {};
+TinyMeleeHelper = {
+    isLuaLocked = true, -- TODO detect automatically
+    asyncCastTimeout = 0.5,
+};
 
 function TinyMeleeHelper:resolveSpells()
     for _, spell in pairs(self.spells) do
@@ -15,12 +18,16 @@ function TinyMeleeHelper:resolveItems()
 end
 
 function TinyMeleeHelper:runMacroText(macroText)
---    RunMacroText(macroText, true);
-    print('macroText', ':', macroText);
+    if self.isLuaLocked then
+        print(macroText);
+    else
+        RunMacroText(macroText);
+    end
 end
 
-function TinyMeleeHelper:isUsableSpell(spell)
-    return (IsUsableSpell(spell.name) == 1);
+function TinyMeleeHelper:isSpellUsable(spell)
+    local spellUsable, spellNoMana = IsUsableSpell(spell.name);
+    return (spellUsable == 1), spellNoMana;
 end
 
 function TinyMeleeHelper:startAttack()
@@ -28,9 +35,7 @@ function TinyMeleeHelper:startAttack()
 end
 
 function TinyMeleeHelper:castSpell(spell)
-    if (self:isUsableSpell(spell.name)) then
-        self:runMacroText('/cast ' .. spell.name);
-    end
+    self:runMacroText('/cast ' .. spell.name);
 end
 
 function TinyMeleeHelper:equipItem(item)
@@ -45,8 +50,12 @@ function TinyMeleeHelper:isTargetFriendly()
     return (UnitExists('target') and UnitIsFriend('player', 'target'));
 end
 
-function TinyMeleeHelper:getSpellCooldown(spell)
-    return select(2, GetSpellCooldown(spell.name));
+function TinyMeleeHelper:isStanceActive(stanceNumber)
+    return GetShapeshiftForm() == stanceNumber;
+end
+
+function TinyMeleeHelper:isSpellCooldown(spell)
+    return select(2, GetSpellCooldown(spell.name)) > 0;
 end
 
 function TinyMeleeHelper:isInCombat()
