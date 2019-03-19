@@ -22,6 +22,7 @@ function TinyMeleeHelper:castHeroicStrike()
     if not self:hasEnoughRage(hs.rage) then return end
     if self:isMounted() then return end
 
-    self:castSpell(hs);
+--    self:castSpell(hs);
+    self:showHeroicStrikeIcon();
     self.heroicStrike.castTriggered = true;
 end

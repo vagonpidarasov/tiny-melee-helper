@@ -1,0 +1,2 @@
+TinyMeleeHelper:createHeroicStrikeContainer();
+TinyMeleeHelper:createHeroicStrikeIcon();

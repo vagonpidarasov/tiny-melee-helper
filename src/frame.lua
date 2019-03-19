@@ -1,7 +1,7 @@
 function TMHFrameOnUpdate(frame, event)
     TinyMeleeHelper:castHeroicStrike();
-    TinyMeleeHelper:castAsyncSpell();
-    TinyMeleeHelper:castSweepingStrikes();
+--    TinyMeleeHelper:castAsyncSpell();
+--    TinyMeleeHelper:castSweepingStrikes();
 end
 
 function TMHFrameOnEvent(frame, event, ...)
@@ -12,6 +12,7 @@ function TMHFrameOnEvent(frame, event, ...)
 
     if TinyMeleeHelper:isSwingEvent(event, ...) then
         TinyMeleeHelper:resolveHeroicStrikeCastTime();
+        TinyMeleeHelper:hideHeroicStrikeIcon();
     end
 
     if (TinyMeleeHelper:isUnitInventoryChangeEvent(event, ...)) then

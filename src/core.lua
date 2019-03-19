@@ -8,7 +8,10 @@ TinyMeleeHelper = {
 
 function TinyMeleeHelper:resolveSpells()
     for _, spell in pairs(self.spells) do
-        spell.name = GetSpellInfo(spell.id);
+        local name, _, icon = GetSpellInfo(spell.id)
+--        spell.name = GetSpellInfo(spell.id);
+        spell.name = name;
+        spell.icon = icon;
         if spell.stance == nil then spell.stance = 0 end
         if spell.target ~= true then spell.target = false end
     end
