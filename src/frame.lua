@@ -1,6 +1,7 @@
 function TMHFrameOnUpdate(frame, event)
     TinyMeleeHelper:castHeroicStrike();
     TinyMeleeHelper:castAsyncSpell();
+    TinyMeleeHelper:castSweepingStrikes();
 end
 
 function TMHFrameOnEvent(frame, event, ...)

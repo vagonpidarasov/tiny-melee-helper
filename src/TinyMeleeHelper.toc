@@ -9,6 +9,7 @@ spells.lua
 items.lua
 mortal-strike.lua
 heroic-strike.lua
+sweeping-strikes.lua
 cast-from-stance.lua
 async-cast.lua
 binding-names.lua
