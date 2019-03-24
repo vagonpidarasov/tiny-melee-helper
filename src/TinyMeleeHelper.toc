@@ -1,12 +1,11 @@
 ## Interface: 30300
 ## Title: Tiny Melee Helper
-## Version: 4.1.0
+## Version: 4.1.2
 ## Author: vagonpidarasov
-## Notes: Arms warrior PVP rotation helper
+## Notes: Warrior heroic strike helper
 core.lua
 event-detection.lua
 spells.lua
-items.lua
 heroic-strike.frame.lua
 heroic-strike.lua
 frame.lua
