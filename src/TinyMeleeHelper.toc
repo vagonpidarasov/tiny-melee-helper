@@ -10,3 +10,4 @@ heroic-strike.frame.lua
 heroic-strike.lua
 frame.lua
 bootstrap.lua
+api.lua

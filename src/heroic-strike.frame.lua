@@ -22,7 +22,7 @@ function TinyMeleeHelper:createHeroicStrikeContainer()
     --frame:SetScript('OnMouseUp', function(self, button)
     --if button == 'LeftButton' then self:StopMovingOrSizing() end
     --end)
-    frame:Show();
+    frame:Hide();
     self.heroicStrikeFrame.container = frame;
 end
 
